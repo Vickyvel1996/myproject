@@ -1,15 +1,16 @@
-- name:ansible
-  host:all
-  become:yes
+- name: Ansible Playbook
+  hosts: all
+  become: yes
   tasks:
     - name: Apply Kubernetes Resources
       k8s:
         state: present
-        src: /var/lib/jenkins/workspace/mynewprojec
-        cmd: kubectl apply -f mypod.yml
+        src: /var/lib/jenkins/workspace/mynewproject/mypod.yml
+      delegate_to: localhost
 
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
-        src: /root/workspace/mynewproject/index.html
-        dest:  /usr/local/apache2/htdocs
+        src: /var/lib/jenkins/workspace/mynewproject/index.html
+        dest: /usr/local/apache2/htdocs
         mode: '0644'
+
