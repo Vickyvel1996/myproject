@@ -2,11 +2,9 @@
   hosts: all
   become: yes
   tasks:
-    - name: Apply Kubernetes Resources
-      k8s:
-        state: present
-        src: /var/lib/jenkins/workspace/mynewproject/mypod.yml
-        cmd: kubectl apply -f mypod.yml
+    - name: Apply Kubernetes Reso
+      ansible.builtin.command:
+        cmd: kubectl apply -f /var/lib/jenkins/workspace/newproject/mypod.yml
       delegate_to: localhost
 
     - name: Copy file with owner and permissions
