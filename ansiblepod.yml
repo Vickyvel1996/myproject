@@ -4,7 +4,7 @@
   tasks:
     - name: Apply Kubernetes Reso
       ansible.builtin.command:
-        cmd: kubectl apply -f /var/lib/jenkins/workspace/newproject/mypod.yml
+        cmd: kubectl apply -f /var/lib/jenkins/workspace/mynewproject/mypod.yml
       delegate_to: localhost
 
     - name: Copy file with owner and permissions
