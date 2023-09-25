@@ -14,6 +14,9 @@
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
         src: /var/lib/jenkins/workspace/mynewproject/index.html
-        dest: /usr/local/apache2/htdocs
+        dest: /home/ec2-user
         mode: '0644'
 
+    - name: copy
+      ansible.builtin.command:
+        cmd: kubectl cp /home/ec2-user/index.html mypods:/usr/local/apache2/htdocs
