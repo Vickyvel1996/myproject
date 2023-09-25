@@ -6,6 +6,7 @@
       k8s:
         state: present
         src: /var/lib/jenkins/workspace/mynewproject/mypod.yml
+        cmd: kubectl apply -f mypod.yml
       delegate_to: localhost
 
     - name: Copy file with owner and permissions
