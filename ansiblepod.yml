@@ -1,7 +1,7 @@
 - name:ansible
   host:all
   become:yes
-  task:
+  tasks:
     - name: Apply Kubernetes Resources
       k8s:
         state: present
