@@ -1,0 +1,11 @@
+- name:ansible
+  host:all
+  become:yes
+  task:
+     - name: Copy file with owner and permissions
+       ansible.builtin.copy:
+         src: /root/workspace/mynewproject/index.html
+         dest: 
+         owner: foo
+         group: foo
+         mode: '0644'
