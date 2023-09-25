@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: mypods
   labels:
-  name: MyApp
+  name: myapp
 spec:
   containers:
   - name: vicky
@@ -17,7 +17,7 @@ metadata:
   name: my-service
 spec:
   selector:
-  name: MyApp
+  name: myapp
   ports:
     - protocol: TCP
       port: 80
