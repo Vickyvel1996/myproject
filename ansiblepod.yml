@@ -3,11 +3,6 @@
   become:yes
   task:
     - name: Apply Kubernetes Resources
-      hosts: all  # or specify the host where Ansible should run this playbook
-      gather_facts: no  # Disable gathering facts
-
-  tasks:
-    - name: Apply Kubernetes Resources
       k8s:
         state: present
         src: /var/lib/jenkins/workspace/mynewprojec
