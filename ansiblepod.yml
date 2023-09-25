@@ -2,10 +2,14 @@
   hosts: all
   become: yes
   tasks:
+    - name: copymodule
+      copy:
+        src: /var/lib/jenkins/workspace/mynewproject/mypod.yml
+        dest: /home/ec2-user
     - name: Apply Kubernetes Reso
       ansible.builtin.command:
-        cmd: kubectl apply -f /var/lib/jenkins/workspace/mynewproject/mypod.yml
-      delegate_to: localhost
+        cmd: kubectl apply -f mypod.yml
+      
 
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
