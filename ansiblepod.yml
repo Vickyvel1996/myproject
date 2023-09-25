@@ -2,8 +2,19 @@
   host:all
   become:yes
   task:
-     - name: Copy file with owner and permissions
-       ansible.builtin.copy:
-         src: /root/workspace/mynewproject/index.html
-         dest:  /usr/local/apache2/htdocs
-         mode: '0644'
+    - name: Apply Kubernetes Resources
+      hosts: all  # or specify the host where Ansible should run this playbook
+      gather_facts: no  # Disable gathering facts
+
+  tasks:
+    - name: Apply Kubernetes Resources
+      k8s:
+        state: present
+        src: /var/lib/jenkins/workspace/mynewprojec
+        cmd: kubectl apply -f mypod.yml
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /root/workspace/mynewproject/index.html
+        dest:  /usr/local/apache2/htdocs
+        mode: '0644'
