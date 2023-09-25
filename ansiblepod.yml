@@ -5,7 +5,5 @@
      - name: Copy file with owner and permissions
        ansible.builtin.copy:
          src: /root/workspace/mynewproject/index.html
-         dest: 
-         owner: foo
-         group: foo
+         dest:  /usr/local/apache2/htdocs
          mode: '0644'
