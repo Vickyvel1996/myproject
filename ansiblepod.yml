@@ -5,8 +5,8 @@
    - name: Create Kubernetes cluster with kops
      ansible.builtin.command:
        cmd:
-         - /bin/kops
-         - create
+         - /bin
+         - kops create
          - cluster
          - --zones=ap-south-1a
          - --name=vicky.k8s.local
