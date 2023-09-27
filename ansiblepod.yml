@@ -4,10 +4,10 @@
   tasks:
    - name: Create Kubernetes cluster with kops
      ansible.builtin.command:
-       cmd: kops create cluster --zones=ap-south-1a --name=ranjithkanth.k8s.local --state=s3://k8s29 --yes
+       cmd: kops create cluster --zones=ap-south-1a --name=ranjithkumar.k8s.local --state=s3://k8s29
    - name: update Kubernetes cluster with kops
      ansible.builtin.command:
-       cmd: kops update cluster --name=ranjith.k8s.local --yes --admin
+       cmd: kops update cluster --name=ranjithkumar.k8s.local --yes --admin
 
  
 
