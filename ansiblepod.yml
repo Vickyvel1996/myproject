@@ -17,7 +17,7 @@
 
    - name: pause
      pause:
-       seconds: 200
+       seconds: 380
    - name: Apply Kubernetes Reso
      ansible.builtin.command:
        cmd: kubectl apply -f mypod.yml
