@@ -15,7 +15,7 @@
  
 
    - name: copymodule
-      copy:
+     copy:
         src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
         dest: /home/ec2-user
     - name: Apply Kubernetes Reso
