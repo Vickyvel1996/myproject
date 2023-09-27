@@ -4,7 +4,7 @@
   tasks:
     - name: create cluster
       ansible.builtin.command:
-        cmd: kops create cluster --zones=ap-south-1a name=vicky.k8s.local --yes --admin
+        cmd: kops create cluster --zones=ap-south-1a --name= ${name} --yes --admin
     - name: copymodule
       copy:
         src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
