@@ -2,9 +2,10 @@
   hosts: all
   become: yes
   tasks:
-    - name: create cluster
+    - name: Create Kubernetes cluster with kops
       ansible.builtin.command:
-        cmd: kops create cluster --zones=ap-south-1a --name= ${name} --yes --admin
+        cmd: /bin kops create cluster --zones=ap-south-1a --name={{ name }} --yes --admin
+
     - name: copymodule
       copy:
         src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
