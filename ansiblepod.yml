@@ -6,7 +6,7 @@
    
    - name: update Kubernetes cluster with kops
      ansible.builtin.command:
-       cmd: kops create cluster --name=ranjithkumars.k8s.local --state=s3://k8s29 --yes --admin
+       cmd: kops create cluster --name=ranjithkumars.k8s.local --state=s3://k8s29 --yes 
 
  
 
