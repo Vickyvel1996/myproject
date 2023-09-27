@@ -16,8 +16,8 @@
 
    - name: copymodule
      copy:
-        src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
-        dest: /home/ec2-user
-    - name: Apply Kubernetes Reso
-      ansible.builtin.command:
-        cmd: kubectl apply -f mypod.yml
+       src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
+       dest: /home/ec2-user
+   - name: Apply Kubernetes Reso
+     ansible.builtin.command:
+       cmd: kubectl apply -f mypod.yml
