@@ -3,7 +3,8 @@
   become: yes
   tasks:
    - name: Create Kubernetes cluster with kops
-     shell: "/bin/kops create cluster --zones=ap-south-1a --name=vicky.k8s.local --yes --admin"
+     ansible.builtin.command:
+       cmd: kops create cluster --zones=ap-south-1a --name=vicky.k8s.local --yes --admin
 
  
 
