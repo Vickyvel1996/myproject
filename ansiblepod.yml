@@ -9,7 +9,7 @@
          - create
          - cluster
          - --zones=ap-south-1a
-         - --name={{ name }}
+         - --name=vicky.k8s.local
          - --yes
          - --admin
  
