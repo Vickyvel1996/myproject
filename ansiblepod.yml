@@ -2,22 +2,12 @@
   hosts: all
   become: yes
   tasks:
-
-   
-   - name: update Kubernetes cluster with kops
-     ansible.builtin.command:
-       cmd: kops create cluster --name=ranjithkumars.k8s.local --zones=ap-south-1a --state=s3://k8s29 --yes 
-
- 
-
-   - name: copymodule
-     copy:
-       src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
-       dest: /home/ec2-user
-
-   - name: pause
-     pause:
-       seconds: 380
-   - name: Apply Kubernetes Reso
-     ansible.builtin.command:
-       cmd: kubectl apply -f mypod.yml
+  
+    - name: copymodule
+      copy:
+        src: /var/lib/jenkins/workspace/vickyproject/mypod.yml
+        dest: /home/ec2-user
+       
+    - name: Apply Kubernetes Reso
+      ansible.builtin.command:
+        cmd: kubectl apply -f mypod.yml
